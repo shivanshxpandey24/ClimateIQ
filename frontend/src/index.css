@@ -1,0 +1,83 @@
+@import "@arcgis/core/assets/esri/themes/dark/main.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pollution-clean: #22c55e;
+  --pollution-mild: #eab308;
+  --pollution-high: #ef4444;
+  --pollution-critical: #a855f7;
+}
+
+@layer base {
+  body {
+    background-color: #0a0f1e;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Pulsing anomaly marker */
+@keyframes pulse-anomaly {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.anomaly-pulse {
+  animation: pulse-anomaly 1.5s ease-in-out infinite;
+}
+
+/* ArcGIS Map & View Styling */
+.esri-view {
+  background-color: #0a0f1e !important;
+  outline: none !important;
+}
+
+.esri-view-root {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.esri-popup__main-container {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.esri-popup__header-title {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+.esri-popup__button {
+  color: #94a3b8 !important;
+}
+
+.esri-widget--button {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+}
+
+.esri-widget--button:hover {
+  background-color: #334155 !important;
+  color: #38bdf8 !important;
+}
+
+.esri-attribution {
+  background-color: rgba(10, 15, 30, 0.75) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 2px; }
